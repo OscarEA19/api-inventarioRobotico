@@ -1,0 +1,28 @@
+--BitacoraPrestado
+POST: curl -X 'POST' 'https://localhost:7013/api/BitacoraPrestado/RegistarBitacora' -H 'accept: text/plain' -H 'Content-Type: application/json' -d '{"id": 0,"cedulaUsuario": "208230227","idKit": "Kit01UL","fecha": "2023-08-05T19:01:09.396Z"}'
+GET: curl -X 'GET' 'https://localhost:7013/api/BitacoraPrestado/ObtenerBitacora' -H 'accept: text/plain'
+GET FILTER: curl -X 'GET' 'https://localhost:7013/api/BitacoraPrestado/ObtenerBitacoraPorCedula/118190086' -H 'accept: text/plain'
+--Inventario
+PUT: curl -X 'PUT' 'https://localhost:7013/api/Inventario/ActualizarInventario' -H 'accept: text/plain' -H 'Content-Type: application/json' -d '{"id": 0,"idPieza": 1,"idKit": "Kit01UL","cantidadPieza": 4}'
+POST: curl -X 'POST' 'https://localhost:7013/api/Inventario/RegistarInventario' -H 'accept: text/plain' -H 'Content-Type: application/json' -d '{"id": 0,"idPieza": 3,"idKit": "Kit001","cantidadPieza": 2}' 
+DELETE: curl -X 'DELETE' 'https://localhost:7013/api/Inventario/BorrarInventarioPorKit/Kit001' -H 'accept: text/plain'
+GET:curl -X 'GET' 'https://localhost:7013/api/Inventario/ObtenerInventario' -H 'accept: text/plain'
+GET FILTER: curl -X 'GET' 'https://localhost:7013/api/Inventario/ObtenerInventarioPorKit/Kit01UL%20%20%20' -H 'accept: text/plain'
+--Kit
+POST: curl -X 'POST' 'https://localhost:7013/api/Kit/RegistarKit' -H 'accept: text/plain' -H 'Content-Type: application/json' -d '{"id": "test","isPrestado": 0}'
+DELETE: curl -X 'DELETE' 'https://localhost:7013/api/Kit/BorrarKitPorId/test' -H 'accept: text/plain'
+GET: curl -X 'GET' 'https://localhost:7013/api/Kit/ObtenerKits' -H 'accept: text/plain'
+--Pieza
+POST: curl -X 'POST' 'https://localhost:7013/api/Pieza/RegistarPieza' -H 'accept: text/plain' -H 'Content-Type: application/json' -d '{"id": 0,"descripcion": "piezaTesst"}'
+DELETE: curl -X 'DELETE' 'https://localhost:7013/api/Pieza/BorrarPiezaPorId/2' -H 'accept: text/plain'
+GET: curl -X 'GET' 'https://localhost:7013/api/Pieza/ObtenerPiezas' -H 'accept: text/plain'
+--Role
+POST: curl -X 'POST' 'https://localhost:7013/api/Rol/RegistarRole' -H 'accept: text/plain' -H 'Content-Type: application/json' -d '{"id": 0,"descripcion": "Ayudante"}'
+DELETE: curl -X 'DELETE' 'https://localhost:7013/api/Rol/BorrarRolPorId/1002' -H 'accept: text/plain'
+GET:  curl -X 'GET' 'https://localhost:7013/api/Rol/ObtenerRoles' -H 'accept: text/plain'
+--Usuario
+PUT: curl -X 'PUT' 'https://localhost:7013/api/Usuario/ActualizarUsuario' -H 'accept: text/plain' -H 'Content-Type: application/json' -d '{"cedula":"118190086","carnet":"20200123417","nombre":"OscarE","apellido":"Espinoza","idRol":1,"contrasena":"12345","correoElectronico":"oscar@gmail.com"}'
+POST: curl -X 'POST' 'https://localhost:7013/api/Usuario/RegistarUsuario' -H 'accept: text/plain' -H 'Content-Type: application/json' -d '{"cedula": "11111111","carnet": "20200123418","nombre": "Eduardo","apellido": "Austin","idRol": 2,"contrasena": "123245","correoElectronico": "eduardo@gmail.com"}'
+DELETE: curl -X 'DELETE' 'https://localhost:7013/api/Usuario/BorrarUsuarioPorCedula/118740864' -H 'accept: text/plain'
+GET: curl -X 'GET' 'https://localhost:7013/api/Usuario/ObtenerUsuarios' -H 'accept: text/plain'
+GET FILTER: curl -X 'GET' 'https://localhost:7013/api/Usuario/ObtenerUsuarioPorCedula/118740864' -H 'accept: text/plain'
